@@ -1,0 +1,30 @@
+version: 0.0
+os: linux
+files: 
+  - resources:
+  - /etc/nginx/
+  - /etc/supervisor/
+  - /var/log/supervisor/
+  - /var/run/
+    destination: /home/ubuntu/project
+permissions:
+  - object: /home/ubuntu/project
+    owner: ubuntu
+    group: ubuntu
+
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+          run:ubuntu
+      timeout: 300
+  AfterInstall:
+    - location: scripts/configure_nginx.sh
+          run:ubuntu
+      timeout: 300
+    - location: scripts/configure_supervisor.sh
+          run:ubuntu
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/start_gunicorn.sh
+          run:ubuntu
+      timeout: 300
