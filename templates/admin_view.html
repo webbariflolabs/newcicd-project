@@ -1,0 +1,31 @@
+<html>
+     <head>
+          <style>
+                div{
+                    width: fit-content;
+                    height: fit-content;
+                    margin-left: 100px;
+                    margin-top: 100px;
+                    background-color: aquamarine;
+                    font-size: x-large;
+                    font-family: Arial, Helvetica, sans-serif; }
+          </style>
+          <script>
+                {% for message in messages %}
+                    alert("{{ message }}");
+                {% endfor %}
+          </script>
+     </head>
+     <body>
+          <div>
+              <h1> User Reigsteration</h1>
+                 <form action="/register1/" method="post">
+                   {% csrf_token %}
+                    Email <input type="email" name="t1" ><br> 
+                    UserName <input type="text" name="t2"><br>
+                    Password <input type="password" name="t3" ><br> 
+                   <input type="submit" value="Register">
+                 </form>
+          </div>
+     </body>
+</html>
