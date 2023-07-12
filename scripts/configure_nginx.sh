@@ -9,7 +9,7 @@ sudo rm -f /etc/nginx/sites-enabled/default
 sudo cat >/etc/nginx/sites-available/myapp <<EOL
 server {
     listen 80;
-    server_name 18.176.61.100;
+    server_name 43.206.218.233;
 
     location / {
         proxy_pass http://127.0.0.1:8000;
