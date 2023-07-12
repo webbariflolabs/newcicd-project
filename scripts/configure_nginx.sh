@@ -6,7 +6,7 @@ set -e
 sudo rm -f /etc/nginx/sites-enabled/default
 
 # Create a new Nginx configuration file
-sudo cat >/etc/nginx/sites-available/myapp <<EOL
+sudo cat >/etc/nginx/sites-available/barifloapp <<EOL
 server {
     listen 80;
     server_name 43.206.218.233;
